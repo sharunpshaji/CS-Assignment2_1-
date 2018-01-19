@@ -51,13 +51,19 @@ void linkedlist::insertat(int p, int n) {
 		node *current = new node;
 		node *temp = new node;
 		current = head;
+		int x;
 		for (int i = 1; i < p; i++) {
 			previous = current;
 			current = current->next;
+			x++;
 		}
+		if(x=p-1){
 		previous->next = temp;
 		temp->data = n;
-		temp->next = current;
+		temp->next = current;}
+		else{
+            cout<<"there is no such position";
+		}
 	};
 
 
@@ -131,7 +137,7 @@ int main() {
 
     linkedlist a;
     a.insert (1);
-    a.insert (2);
+    a.insertat(4,2);
     a.show();
     cout<<endl;
     a.count();
